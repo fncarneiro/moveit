@@ -30,6 +30,15 @@
 > Closely related to concepts such as timeboxing and iterative and incremental development used in software design,
 > the method has been adopted in pair programming contexts.
 
+<p>
+ <a href="https://rocketseat.com.br/">
+  <img src="rocketseat.svg" class="page-image__logo__react" alt="Rocketseat Logo">      
+      </a> 
+  </p>
+  <p>
+  Project developed during <nlw/> 4 - RocketSeat Next Level Week.
+  </p>
+
 ### 🏠 [Homepage](https://moveit.fncarneiro.vercel.app/)
 
 ## Prerequisites
