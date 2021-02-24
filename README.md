@@ -32,11 +32,11 @@
 
 <p>
  <a href="https://rocketseat.com.br/">
-  <img src="rocketseat.svg" class="page-image__logo__react" alt="Rocketseat Logo">      
+  <img src="https://github.com/fncarneiro/moveit/blob/main/public/rocketseat.svg" alt="Rocketseat Logo">      
       </a> 
   </p>
   <p>
-  Project developed during <nlw/> 4 - RocketSeat Next Level Week.
+  Project developed during nlw/4 - RocketSeat Next Level Week.
   </p>
 
 ### 🏠 [Homepage](https://moveit.fncarneiro.vercel.app/)
