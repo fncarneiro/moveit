@@ -32,7 +32,7 @@
 
 <p>
  <a href="https://rocketseat.com.br/">
-  <img src="https://github.com/fncarneiro/moveit/blob/main/public/rocketseat.svg" alt="Rocketseat Logo">      
+  <img src="https://storage.googleapis.com/golden-wind/github/rocketseat-logo.svg" style="color: #121214" width="220px"  alt="Rocketseat Logo"/>      
       </a> 
   </p>
   <p>
