@@ -16,7 +16,7 @@
   </a>
 </p>
 
-<a href="https://moveit.fncarneiro.vercel.app/" target="_blank">
+<a href="https://moveit-fncarneiro.vercel.app/" target="_blank">
   <img src="https://github.com/fncarneiro/moveit/blob/main/public/logo-full.svg" alt="Move.it logo">  
 </a>
 
@@ -38,7 +38,7 @@
  </a> 
 </p>
 
-### 🏠 [Homepage](https://moveit.fncarneiro.vercel.app/)
+### 🏠 [Homepage](https://moveit-fncarneiro.vercel.app/)
 
 ## Prerequisites
 
