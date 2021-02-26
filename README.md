@@ -16,9 +16,9 @@
   </a>
 </p>
 
-
-> <img src="https://github.com/fncarneiro/moveit/blob/main/public/logo-full.svg" alt="Move.it logo">  
-
+<a href="https://moveit-fncarneiro.vercel.app/" target="_blank">
+  <img src="https://github.com/fncarneiro/moveit/blob/main/public/logo-full.svg" alt="Move.it logo">  
+</a>
 
 > The App Move.it will help you to use The Pomodoro Technique.
 > The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s.
@@ -31,20 +31,20 @@
 > the method has been adopted in pair programming contexts.
 
 <p>
- <a href="https://rocketseat.com.br/">
-  <img src="https://storage.googleapis.com/golden-wind/github/rocketseat-logo.svg" style="color: #121214" width="220px"  alt="Rocketseat Logo"/>      
-      </a> 
-  </p>
-  <p>
-  Project developed during nlw/4 - RocketSeat Next Level Week.
-  </p>
+ <a href="https://rocketseat.com.br/" target="_blank">
+    <img src="https://storage.googleapis.com/golden-wind/github/rocketseat-logo.svg" style="color: #121214" width="220px"  alt="Rocketseat Logo"/>      
+    <br>  
+    Project developed during nlw/4 - RocketSeat Next Level Week.
+ </a> 
+</p>
 
-### 🏠 [Homepage](https://moveit.fncarneiro.vercel.app/)
+### 🏠 [Homepage](https://moveit-fncarneiro.vercel.app/)
 
 ## Prerequisites
 
 - React: ^16.8.0
 - Next: last version
+- Typescript: last version
 
 
 ## Install
