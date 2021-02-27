@@ -58,6 +58,12 @@ export function Countdown() {
               )}
           </>
         )}
+      <form className={styles.countdownForm} onSubmit={() => {}}>
+        <input type="checkbox" className={styles.countdownFormInput} value={0} onChange={() => {}} />        
+        <label> 
+          Automatic cycle
+        </label>        
+      </form>
 
     </div>
   )

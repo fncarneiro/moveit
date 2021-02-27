@@ -36,6 +36,14 @@
   margin: 0 0.5rem
 }
 
+.countdownForm{
+  margin: 0.5rem ;
+}
+
+.countdownFormInput{
+  margin-right: 0.25rem;
+}
+
 .countdownButton {
   width: 100%;
   height: 5rem;
