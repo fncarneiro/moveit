@@ -1,0 +1,37 @@
+
+.container {
+    height: 100vh;    
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+  
+    
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns: repeat(3 , 1fr);
+    justify-content: center;
+    align-self: end;
+    /* flex-direction: column; */
+    max-width: 600px;
+    background: var(--blue); 
+    background-image: url("/public/logo-full.svg");
+    color: var(--white);
+    
+  }
+  
+/* .container section {
+    flex: 2 ;  
+    display: flex;
+    grid-template-columns: 1fr;
+    gap: 6.25rem;
+    align-content: right;
+    font-size: 36px;
+  }  
+
+  .container p {
+      color:#B2B9FF;
+      font-size: 20px;
+  } */
+
+
+
+  

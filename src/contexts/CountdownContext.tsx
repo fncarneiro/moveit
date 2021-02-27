@@ -6,8 +6,10 @@ interface CountdownContextData {
   seconds: number;
   hasFinished: boolean;
   isActive: boolean;
+  isAutomaticCount: boolean;
   startCountdown: () => void;
   resetCountdown: () => void;
+  setAutomaticCount: () => void;
 }
 
 interface CountdownProviderProps {
@@ -22,9 +24,10 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
 
   const { startNewChallenge } = useContext(ChallengesContext)
 
-  const [time, setTime] = useState(0.25 * 60)
+  const [time, setTime] = useState(0.05 * 60)
   const [isActive, setIsActive] = useState(false)
   const [hasFinished, setHasFinished] = useState(false)
+  const [isAutomaticCount, setIsAutomaticCount] = useState(false)
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
@@ -35,9 +38,14 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
 
   function resetCountdown() {
     clearTimeout(countdownTimeout);
-    setIsActive(false);
-    setTime(0.25 * 60)
-    setHasFinished(false)
+    setTime(0.05 * 60);
+    setHasFinished(false);   
+    setIsActive(isAutomaticCount) 
+  }
+
+  function setAutomaticCount() {    
+    const inputAutoChecked = document.getElementById("inputAuto").checked;    
+    setIsAutomaticCount(inputAutoChecked)
   }
 
   useEffect(() => {
@@ -45,11 +53,11 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
       countdownTimeout = setTimeout(() => {
         setTime(time - 1)
       }, 1000)
-    } else if (isActive && time === 0) {
-      setHasFinished(true)
-      setIsActive(false)
-      startNewChallenge()
-    }
+    } else
+      if (isActive && time === 0) {
+        setHasFinished(true)
+        startNewChallenge()        
+      }
   }, [isActive, time])
 
   return (
@@ -58,8 +66,10 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
       seconds,
       hasFinished,
       isActive,
+      isAutomaticCount,
       startCountdown,
-      resetCountdown
+      resetCountdown,
+      setAutomaticCount
     }}>
       { children}
     </CountdownContext.Provider>

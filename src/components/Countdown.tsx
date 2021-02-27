@@ -10,7 +10,8 @@ export function Countdown() {
     hasFinished,
     isActive,
     startCountdown,
-    resetCountdown
+    resetCountdown,
+    setAutomaticCount
   } = useContext(CountdownContext);
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
@@ -58,12 +59,16 @@ export function Countdown() {
               )}
           </>
         )}
-      <form className={styles.countdownForm} onSubmit={() => {}}>
-        <input type="checkbox" className={styles.countdownFormInput} value={0} onChange={() => {}} />        
-        <label> 
-          Automatic cycle
-        </label>        
-      </form>
+
+      <input
+        id="inputAuto"
+        type="checkbox"
+        className={styles.countdownInput}        
+        onChange={setAutomaticCount}
+      />
+      <label>
+        Automatic cycle
+      </label>
 
     </div>
   )

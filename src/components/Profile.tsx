@@ -9,6 +9,7 @@ export function Profile() {
 
     return (
         <div className={styles.profileContainer}>
+           
             <img src="https://github.com/fncarneiro.png" alt="Photo Fernando Carneiro" />
             
             <div>

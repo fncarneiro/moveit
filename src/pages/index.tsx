@@ -28,13 +28,16 @@ export default function Home(props) {
       <div className={styles.container}>
         <Head>
           <title>Home | move.it</title>
+          <meta property="og:title" content="Move.it - Pomodoro Technique App" key="title" />
+          <meta property="og:image" content="/icons/favicon.png" />
+          <meta property="og:image:type" content="image/png" />
         </Head>
         
         <ExperienceBar />
         <CountdownProvider>
           <section>
             <div>
-              <Profile />
+              <Profile />              
               <CompletedChallenges />
               <Countdown />
             </div>
