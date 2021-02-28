@@ -19,7 +19,6 @@
 <a href="https://moveit-fncarneiro.vercel.app/" target="_blank">
   <img src="https://github.com/fncarneiro/moveit/blob/main/public/logo-full.svg" alt="Move.it logo">  
 </a>
-<img src="https://github.com/fncarneiro/moveit/blob/main/public/moveit.gif" alt="Move.it"> 
 
 ![](/public/moveit.gif) 
 
