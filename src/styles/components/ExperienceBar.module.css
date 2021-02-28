@@ -24,10 +24,21 @@
     background: var(--green);
 }
 
-/* ALINHANDO SPAN */
+.currentExperience {
+    position: absolute;
+    top: 12px;
+    transform: translateX(-50%);
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1rem;
+  }
+
+/* ALINHANDO SPAN 
 span.currentExperience {
     position: absolute;
     top: 12px;
-    /* METADE DO TAMANHO DO ELEMENTO (ALINHANDO AO CENTRO */
+     METADE DO TAMANHO DO ELEMENTO (ALINHANDO AO CENTRO
     transform: translateX(-50%);
-}
+} */

@@ -1,19 +1,20 @@
-import { useContext } from 'react'
-import { ChallengesContext } from '../contexts/ChallengesContext'
-import styles from '../styles/components/Profile.module.css'
+import { useContext } from 'react';
+import { ChallengesContext } from '../contexts/ChallengesContext';
+import styles from '../styles/components/Profile.module.css';
 import GitHubCorner from './GitHubCorner';
+import { useSession } from 'next-auth/client';
 
 export function Profile() {
-
-    const { level } = useContext(ChallengesContext)
-
+    const [ session ] = useSession();
+    const { level } = useContext(ChallengesContext);
+    
     return (
         <div className={styles.profileContainer}>
            
-            <img src="https://github.com/fncarneiro.png" alt="Photo Fernando Carneiro" />
+            <img src={session.user.image} alt={session.user.name} />
             
             <div>
-                <strong>Fernando Carneiro</strong>
+                <strong>{session.user.name}</strong>
                 <p>
                     <img src="icons/level.svg" alt="Level" />
                     Level {level}

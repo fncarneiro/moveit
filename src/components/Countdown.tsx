@@ -14,8 +14,8 @@ export function Countdown() {
     setAutomaticCount
   } = useContext(CountdownContext);
 
-  const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
-  const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
+  const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
+  const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
 
   return (
     <div>
@@ -54,7 +54,7 @@ export function Countdown() {
                   className={styles.countdownButton}
                   onClick={startCountdown}
                 >
-                  Start a cycle
+                  Start a cycle                 
                 </button>
               )}
           </>
