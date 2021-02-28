@@ -20,7 +20,7 @@
   <img src="https://github.com/fncarneiro/moveit/blob/main/public/logo-full.svg" alt="Move.it logo">  
 </a>
 <a href="https://moveit-fncarneiro.vercel.app/" target="_blank">
-  <img src="https://github.com/fncarneiro/moveit/blob/main/public/Home_moveit.gif" alt="Move.it">    
+  ![](Home_moveit.gif)     
 </a>
 
 > The App Move.it will help you to use The Pomodoro Technique.
