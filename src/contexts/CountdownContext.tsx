@@ -44,8 +44,13 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   }
 
   function setAutomaticCount() {    
-    const inputAutoChecked = document.getElementById("inputAuto").checked;    
-    setIsAutomaticCount(inputAutoChecked)
+    const inputAuto = document.getElementById("inputAuto") as HTMLInputElement; 
+
+    if(inputAuto.checked){
+      setIsAutomaticCount(true)
+    } else {
+      setIsAutomaticCount(false)
+    }  
   }
 
   useEffect(() => {
