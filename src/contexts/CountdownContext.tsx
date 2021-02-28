@@ -24,7 +24,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
 
   const { startNewChallenge } = useContext(ChallengesContext)
 
-  const [time, setTime] = useState(0.05 * 60)
+  const [time, setTime] = useState(0.20 * 60)
   const [isActive, setIsActive] = useState(false)
   const [hasFinished, setHasFinished] = useState(false)
   const [isAutomaticCount, setIsAutomaticCount] = useState(false)
@@ -38,19 +38,19 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
 
   function resetCountdown() {
     clearTimeout(countdownTimeout);
-    setTime(0.05 * 60);
-    setHasFinished(false);   
-    setIsActive(isAutomaticCount) 
+    setTime(0.20 * 60);
+    setHasFinished(false);
+    setIsActive(isAutomaticCount)
   }
 
-  function setAutomaticCount() {    
-    const inputAuto = document.getElementById("inputAuto") as HTMLInputElement; 
+  function setAutomaticCount() {
+    const inputAuto = document.getElementById("inputAuto") as HTMLInputElement;
 
-    if(inputAuto.checked){
+    if (inputAuto.checked) {
       setIsAutomaticCount(true)
     } else {
       setIsAutomaticCount(false)
-    }  
+    }
   }
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
     } else
       if (isActive && time === 0) {
         setHasFinished(true)
-        startNewChallenge()        
+        startNewChallenge()
       }
   }, [isActive, time])
 

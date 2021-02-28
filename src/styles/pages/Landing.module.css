@@ -46,9 +46,10 @@
 .loginContent p::after {
   content: '';
   position: absolute;
-  width: 35%;
-  height: 1px;
+  width: 100%;
+  height: 20px;
   top: 50%;
+  border-radius: 5px;
   transform: translateY(-50%);
 
   background: var(--text-highlight);

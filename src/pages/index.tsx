@@ -42,7 +42,7 @@ export default function Home(props: HomeProps) {
           <div className={styles.loginContent}>
             <h2>Welcome</h2>
             <p>
-              Log in with your Github account
+              Log in with your GitHub account
             </p>
             <button type="button" onClick={() => signIn('github')}>
               <FaGithub size={26} />
