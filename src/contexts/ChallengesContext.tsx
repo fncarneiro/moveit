@@ -63,10 +63,10 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
 
   function closeLevelUpModal() {
     setIsLevelUpModalOpen(false);
-  }  
+  }
 
   function startNewChallenge() {
-    
+
     const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
     const challenge = challenges[randomChallengeIndex];
 
@@ -74,24 +74,21 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
       if (!window.Notification || !Notification.requestPermission)
         return false;
       if (Notification.permission === 'granted')
-        throw new Error(`You must only call this before calling 
-                        Notification.requestPermission(), otherwise this feature detect would bug the 
-                        user with an actual notification!`);
-      try {
-        new Notification('New challenge 🎉', {
-               body: `Worth ${challenge.amount}xp!`
-             });
-      } catch (e) {
-        if (e.name == 'TypeError')
-          return false;
-      }
+        try {
+          new Notification('New challenge 🎉', {
+            body: `Worth ${challenge.amount}xp!`
+          });
+        } catch (e) {
+          if (e.name == 'TypeError')
+            return false;
+        }
       return true;
     }
 
     setActiveChallenge(challenge)
 
     new Audio('/notification.mp3').play();
-    
+
     isNewNotificationSupported()
 
     // if (Notification.permission === 'granted') {
