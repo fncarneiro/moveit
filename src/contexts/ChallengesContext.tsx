@@ -1,8 +1,8 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import { createContext, ReactNode, useEffect, useState } from 'react';
 import Cookies from "js-cookie";
 
-import challenges from '../../challenges.json'
-import { LevelUpModal } from '../components/LevelUpModal'
+import challenges from '../../challenges.json';
+import { LevelUpModal } from '../components/LevelUpModal';
 
 interface Challenge {
   type: 'body' | 'eye';
@@ -12,7 +12,7 @@ interface Challenge {
 
 interface ChallengesContextData {
   level: number;
-  currentExperience: number
+  currentExperience: number;
   challengesCompleted: number;
   experienceToNextLevel: number;
   activeChallenge: Challenge;
@@ -30,27 +30,29 @@ interface ChallengesProviderProps {
   challengesCompleted: number;
 }
 
-export const ChallengesContext = createContext({} as ChallengesContextData)
+export const ChallengesContext = createContext({} as ChallengesContextData);
 
 export function ChallengesProvider({ children, ...rest }: ChallengesProviderProps) {
-  const [level, setLevel] = useState(rest.level)
-  const [currentExperience, setCurrentExperience] = useState(rest.currentExperience)
-  const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted)
-  const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
+  const [level, setLevel] = useState(rest.level);
+  const [currentExperience, setCurrentExperience] = useState(rest.currentExperience);
+  const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted);
+  const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
 
 
-  const [activeChallenge, setActiveChallenge] = useState(null)
+  const [activeChallenge, setActiveChallenge] = useState(null);
 
-  const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
+  const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
 
   useEffect(() => {
-    Notification.requestPermission();
+    if ('Notification' in window) {
+      Notification.requestPermission();
+    }
   }, [])
 
   useEffect(() => {
-    Cookies.set('level', String(level))
-    Cookies.set('currentExperience', String(currentExperience))
-    Cookies.set('challengesCompleted', String(challengesCompleted))
+    Cookies.set('level', String(level));
+    Cookies.set('currentExperience', String(currentExperience));
+    Cookies.set('challengesCompleted', String(challengesCompleted));
   }, [level, currentExperience, challengesCompleted])
 
 
@@ -60,22 +62,43 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
   }
 
   function closeLevelUpModal() {
-    setIsLevelUpModalOpen(false)
-  }
+    setIsLevelUpModalOpen(false);
+  }  
 
   function startNewChallenge() {
-    const randomChallengeIndex = Math.floor(Math.random() * challenges.length)
-    const challenge = challenges[randomChallengeIndex]
+    
+    const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
+    const challenge = challenges[randomChallengeIndex];
+
+    function isNewNotificationSupported() {
+      if (!window.Notification || !Notification.requestPermission)
+        return false;
+      if (Notification.permission === 'granted')
+        throw new Error(`You must only call this before calling 
+                        Notification.requestPermission(), otherwise this feature detect would bug the 
+                        user with an actual notification!`);
+      try {
+        new Notification('New challenge 🎉', {
+               body: `Worth ${challenge.amount}xp!`
+             });
+      } catch (e) {
+        if (e.name == 'TypeError')
+          return false;
+      }
+      return true;
+    }
 
     setActiveChallenge(challenge)
 
     new Audio('/notification.mp3').play();
+    
+    isNewNotificationSupported()
 
-    if (Notification.permission === 'granted') {
-      // new Notification('New challenge 🎉', {
-      //   body: `Worth ${challenge.amount}xp!`
-      // })
-    }
+    // if (Notification.permission === 'granted') {
+    //   new Notification('New challenge 🎉', {
+    //     body: `Worth ${challenge.amount}xp!`
+    //   })
+    // }
   }
 
   function resetChallenge() {
