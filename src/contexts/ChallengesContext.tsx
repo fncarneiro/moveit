@@ -72,9 +72,9 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
     //new Audio('/notification.mp3').play();
 
     if (Notification.permission === 'granted') {
-      new Notification('New challenge 🎉', {
-        body: `Worth ${challenge.amount}xp!`
-      })
+      // new Notification('New challenge 🎉', {
+      //   body: `Worth ${challenge.amount}xp!`
+      // })
     }
   }
 
